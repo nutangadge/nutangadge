@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nutan Gadge | Product Owner, Supply Chain Finance</title>
+<meta name="description" content="Nutan Gadge, Product Owner for Supply Chain Finance at IDFC FIRST Bank. An interactive portfolio that follows one invoice from upload to reconciliation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230C1B2E'/%3E%3Ctext x='50' y='66' font-size='50' text-anchor='middle' fill='%23D6A33E' font-family='Georgia'%3ENG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0C1B2E;--bg:#E9F0EF;--card:#fff;--teal:#0F8B8D;--gold:#D6A33E;--red:#C8372D;--mut:#55677a;--line:#cbd8d6;--h:'Bricolage Grotesque',system-ui,sans-serif;--m:'DM Mono',ui-monospace,Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;background-image:linear-gradient(var(--line) 1px,transparent 1px);background-size:100% 36px;background-attachment:local}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.w{max-width:1080px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--h);line-height:1.08;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.6vw,3.2rem);font-weight:800;margin-bottom:14px}
+section{padding:90px 0;position:relative}
+.m{font-family:var(--m)}
+.lead{max-width:60ch;color:var(--mut);font-size:1.05rem}
+/* tracker */
+#trk{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--ink);color:#fff}
+#trk .w{display:flex;align-items:center;gap:18px;height:58px}
+.brand{font-family:var(--h);font-weight:800;white-space:nowrap}
+.steps{display:flex;flex:1;justify-content:space-between;position:relative;max-width:700px;margin-left:auto}
+.steps:before{content:"";position:absolute;left:8px;right:8px;top:9px;height:2px;background:#2a3e57}
+.steps i{position:absolute;left:8px;top:9px;height:2px;background:var(--gold);width:0;transition:width .5s}
+.steps a{position:relative;text-decoration:none;color:#8da0b6;font-size:.7rem;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:var(--m)}
+.steps a b{width:20px;height:20px;border-radius:50%;background:var(--ink);border:2px solid #2a3e57;transition:.3s}
+.steps a.d b{background:var(--gold);border-color:var(--gold)}
+.steps a.d{color:#fff}
+/* stamp */
+.stamp{display:inline-block;font-family:var(--m);font-weight:500;letter-spacing:.14em;color:var(--red);border:3px solid var(--red);border-radius:6px;padding:4px 14px;font-size:.95rem;transform:rotate(-5deg);opacity:0;margin-bottom:18px}
+.in .stamp{animation:st .5s cubic-bezier(.2,1.6,.4,1) .15s forwards}
+@keyframes st{from{opacity:0;transform:rotate(-5deg) scale(2.2)}to{opacity:.9;transform:rotate(-5deg) scale(1)}}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:110px}
+.hero .g{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(3.2rem,9vw,6.4rem);font-weight:800;margin-bottom:16px}
+.hero h1 span{color:var(--teal)}
+.hero .sub{font-size:1.25rem;max-width:30ch;margin-bottom:18px;font-family:var(--h)}
+.hero p.t{color:var(--mut);max-width:52ch;margin-bottom:28px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.92rem;padding:12px 22px;border-radius:8px;border:2px solid var(--ink);color:var(--ink);margin:0 8px 10px 0;transition:.2s}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.p{background:var(--ink);color:#fff}.btn.p:hover{background:var(--teal);border-color:var(--teal)}
+.inv{background:var(--card);border-radius:6px;padding:26px;box-shadow:0 22px 40px -24px rgba(12,27,46,.55);position:relative;transform:rotate(1.2deg);font-size:.85rem}
+.inv:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:10px;background:radial-gradient(circle at 8px -2px,transparent 7px,#fff 8px) 0 0/16px 10px}
+.inv h3{font-size:1.1rem;display:flex;justify-content:space-between;margin-bottom:14px}
+.inv h3 span{font-family:var(--m);font-weight:400;color:var(--mut);font-size:.78rem}
+.inv dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-family:var(--m);border-top:1px dashed var(--line);padding-top:14px}
+.inv dt{color:var(--mut)}.inv dd{text-align:right}
+.inv .tot{margin-top:14px;padding-top:12px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;font-family:var(--m);font-weight:500;font-size:1rem}
+.inv .tot b{color:var(--teal)}
+/* cards */
+.card{background:var(--card);border-radius:10px;padding:26px;border:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:start}
+.two p{margin-bottom:15px;color:#2f4258}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{font-size:.82rem;padding:5px 12px;border:1.5px solid var(--ink);border-radius:999px;font-weight:500;transition:.2s}
+.chips span:hover{background:var(--ink);color:#fff}
+/* console */
+.con{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;margin-top:36px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tabs button{font:inherit;font-size:.84rem;font-weight:600;padding:8px 14px;border-radius:8px;border:1.5px solid var(--ink);background:none;color:var(--ink);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);color:#fff}
+.who{display:grid;gap:8px;margin-top:14px}
+.who div{display:flex;gap:12px;font-size:.9rem}
+.who b{font-family:var(--m);font-weight:500;color:var(--teal);min-width:84px}
+.ctl label{display:flex;justify-content:space-between;font-size:.85rem;font-weight:600;margin-top:16px}
+.ctl label span{font-family:var(--m);color:var(--teal)}
+input[type=range]{width:100%;accent-color:var(--teal)}
+.res{margin-top:20px;border-top:2px solid var(--ink);padding-top:14px;font-family:var(--m);font-size:.9rem;display:grid;gap:6px}
+.res div{display:flex;justify-content:space-between}
+.res .big{font-size:1.15rem;font-weight:500}
+.verdict{margin-top:14px;padding:10px 14px;border-radius:8px;font-weight:600;font-size:.9rem;background:#dcf1ee;color:#0b6567}
+.verdict.no{background:#f9e0dd;color:var(--red)}
+.note{font-size:.78rem;color:var(--mut);margin-top:12px}
+/* experience */
+.ledger{margin-top:36px;background:var(--card);border-radius:10px;border:1px solid var(--line);overflow:hidden}
+.row{display:grid;grid-template-columns:170px 1fr;gap:26px;padding:28px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row .d{font-family:var(--m);font-size:.82rem;color:var(--mut)}
+.row .d b{display:block;color:var(--teal);font-weight:500;margin-top:4px}
+.row h3{font-size:1.35rem;margin-bottom:2px}
+.row .o{color:var(--mut);font-size:.9rem;margin-bottom:10px}
+.row ul{list-style:none;columns:2;column-gap:28px}
+.row li{break-inside:avoid;font-size:.9rem;padding:3px 0 3px 16px;position:relative}
+.row li:before{content:"+";position:absolute;left:0;color:var(--gold);font-weight:800}
+.row.cur{background:linear-gradient(90deg,#fff7e3,#fff)}
+/* systems */
+.sys{display:grid;grid-template-columns:1fr 70px 1fr 70px 1fr;align-items:stretch;margin-top:36px}
+.node{background:var(--ink);color:#fff;border-radius:12px;padding:24px}
+.node small{font-family:var(--m);color:var(--gold);font-size:.74rem}
+.node h3{font-size:1.5rem;margin:4px 0 8px}
+.node p{color:#b8c6d6;font-size:.86rem}
+.pipe{position:relative;align-self:center;height:2px;background:repeating-linear-gradient(90deg,var(--ink) 0 6px,transparent 6px 12px)}
+.pipe:after{content:"";position:absolute;top:-4px;width:10px;height:10px;border-radius:50%;background:var(--gold);animation:pk 2.2s linear infinite}
+@keyframes pk{from{left:0}to{left:calc(100% - 10px)}}
+.go{margin-top:20px;display:flex;gap:26px;align-items:center;background:var(--teal);color:#fff;border-radius:12px;padding:28px 32px}
+.go b{font-family:var(--h);font-size:4.6rem;font-weight:800;line-height:1}
+.go p{max-width:62ch;font-size:.95rem}
+/* awards */
+.aw{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.rc{background:var(--card);padding:24px 22px 30px;position:relative;box-shadow:0 14px 28px -20px rgba(12,27,46,.5);text-align:center}
+.rc:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:10px;background:radial-gradient(circle at 8px -2px,transparent 7px,#fff 8px) 0 0/16px 10px}
+.rc .m{font-size:.74rem;color:var(--mut)}
+.rc h3{font-size:1.3rem;margin:8px 0}
+.rc p{font-family:var(--m);color:var(--teal);font-size:.88rem}
+.sk{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:34px}
+.sk h3{font-size:1.1rem;margin-bottom:4px}
+.cert{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:20px}
+.cert div{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:8px;padding:12px 16px;font-size:.88rem;font-weight:600}
+.cert small{display:block;font-family:var(--m);font-weight:400;color:var(--mut);font-size:.74rem}
+/* contact */
+.fin{background:var(--ink);color:#fff;background-image:none}
+.fin .lead{color:#b8c6d6}
+.bal{display:flex;gap:16px;align-items:center;font-family:var(--m);margin:26px 0;flex-wrap:wrap}
+.bal span{border:1px solid #2a3e57;border-radius:8px;padding:10px 16px;font-size:.85rem}
+.bal b{color:var(--gold);font-size:1.4rem}
+.fin .btn{border-color:#fff;color:#fff}.fin .btn:hover{background:#fff;color:var(--ink)}
+.fin .btn.p{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+footer{background:#06101d;color:#7f93aa;text-align:center;padding:22px;font-size:.82rem}
+@media(max-width:860px){
+.hero .g,.two,.con,.aw,.sk{grid-template-columns:1fr}
+.row{grid-template-columns:1fr;gap:10px}.row ul{columns:1}
+.sys{grid-template-columns:1fr}.pipe{width:2px;height:40px;margin:0 auto;background:repeating-linear-gradient(var(--ink) 0 6px,transparent 6px 12px)}
+.pipe:after{display:none}
+.go{flex-direction:column;text-align:center}
+.brand{display:none}.steps{max-width:none}.steps a span{display:none}
+section{padding:64px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.stamp{opacity:.9}}
+</style>
+</head>
+<body>
+<nav id="trk" aria-label="Invoice journey navigation"><div class="w">
+<a class="brand" href="#s1" style="color:#fff;text-decoration:none">Nutan Gadge</a>
+<div class="steps" id="steps"><i id="bar"></i>
+<a href="#s1"><b></b><span>Uploaded</span></a><a href="#s2"><b></b><span>Approved</span></a><a href="#s3"><b></b><span>Financed</span></a><a href="#s4"><b></b><span>Disbursed</span></a><a href="#s5"><b></b><span>Repaid</span></a><a href="#s6"><b></b><span>Reconciled</span></a>
+</div></div></nav>
+
+<main>
+<section class="hero in" id="s1" data-s><div class="w g">
+<div>
+<span class="stamp">UPLOADED</span>
+<h1>Nutan<br><span>Gadge</span></h1>
+<p class="sub">Product Owner, Supply Chain Finance. Banking and FinTech.</p>
+<p class="t">I own SCF products at IDFC FIRST Bank and follow every invoice from upload to reconciliation. This portfolio does the same: scroll, and one invoice moves through the full lending lifecycle.</p>
+<a class="btn p" href="#s3">Explore My Expertise</a><a class="btn" href="#s4">View Professional Experience</a><a class="btn" href="#s6">Get in Touch</a>
+</div>
+<div class="inv" aria-label="Illustrative invoice">
+<h3>Invoice <span>ILLUSTRATIVE</span></h3>
+<dl><dt>Supplier</dt><dd>Nutan Gadge</dd><dt>Service</dt><dd>SCF product ownership</dd><dt>Programs</dt><dd>Vendor, Dealer, SID, PID, FR</dd><dt>Systems</dt><dd>VEEFIN, UNCIA, TCS BaNCS</dd><dt>Go-lives</dt><dd>7 customized products</dd></dl>
+<div class="tot"><span>Status</span><b id="stat">Uploaded</b></div>
+</div></div></section>
+
+<section id="s2" data-s><div class="w two">
+<div><span class="stamp">APPROVED</span><h2>Profile</h2><p class="lead">QA, business analysis and product ownership in one career.</p></div>
+<div>
+<p>I began in SCF quality assurance on the Themepro digital lending platform, validating onboarding, invoices, financing, disbursement and repayment, including integration with core banking.</p>
+<p>As a business analyst on VEEFIN, I handled requirement gathering, product configuration, client implementation and UAT coordination, and turned business needs into functional solutions.</p>
+<p>As Product Owner for Supply Chain Finance at IDFC FIRST Bank, I combine functional, business, product and technology understanding to drive digital lending across the lending lifecycle.</p>
+<div class="chips"><span>Supply Chain Finance</span><span>Vendor Finance</span><span>Dealer Finance</span><span>Invoice Discounting</span><span>Receivables Financing</span><span>Factoring</span><span>Reverse Factoring</span><span>SME SCF</span><span>LMS</span><span>Core Banking Integration</span><span>Digital Lending</span><span>Product Configuration</span></div>
+</div></div></section>
+
+<section id="s3" data-s><div class="w">
+<span class="stamp">FINANCED</span><h2>Try the financing request</h2>
+<p class="lead">Pick a product, set an invoice, and see the credit check and limit validation decide. Figures are illustrative, not bank rates.</p>
+<div class="con">
+<div class="card"><div class="tabs" id="tabs" role="tablist"></div>
+<h3 id="pt" style="font-size:1.4rem"></h3><p id="pd" style="color:var(--mut);font-size:.92rem;margin-top:6px"></p>
+<div class="who" id="who"></div></div>
+<div class="card ctl">
+<label for="a">Invoice amount <span id="av"></span></label><input id="a" type="range" min="1" max="500" value="120">
+<label for="t">Tenor <span id="tv"></span></label><input id="t" type="range" min="15" max="180" step="5" value="60">
+<label for="r">Annual rate <span id="rv"></span></label><input id="r" type="range" min="6" max="14" step="0.25" value="9">
+<label for="l">Program limit <span id="lv"></span></label><input id="l" type="range" min="50" max="1000" step="10" value="300">
+<div class="res"><div><span>Discount charge</span><span id="o1"></span></div><div class="big"><span>Disbursed</span><span id="o2"></span></div><div><span>Repaid on due date</span><span id="o3"></span></div></div>
+<div class="verdict" id="vd" role="status"></div>
+<p class="note">Discount = amount x rate x tenor / 365. Amounts in rupees (L = lakh).</p>
+</div></div></div></section>
+
+<section id="s4" data-s><div class="w">
+<span class="stamp">DISBURSED</span><h2>Professional experience</h2>
+<p class="lead">Three roles in the IDFC FIRST Bank SCF ecosystem: SCF QA, then Business Analyst, then Product Owner.</p>
+<div class="ledger">
+<div class="row cur"><div class="d">Aug 2026 - Present<b>Product Owner</b></div><div><h3>Product Owner, Supply Chain Finance</h3><p class="o">IDFC FIRST Bank, Mumbai</p><ul><li>Own Supply Chain Finance products</li><li>Drive digital lending across the end-to-end lifecycle</li><li>Align business, operations and technology</li></ul></div></div>
+<div class="row"><div class="d">Apr 2023 - May 2026<b>Business Analyst</b></div><div><h3>SCF Business Analyst, IDFC FIRST Bank (VEEFIN)</h3><p class="o">QKTech, Navi Mumbai</p><ul><li>End-to-end SCF product implementation</li><li>Vendor and Dealer Finance</li><li>Invoice Discounting and Receivables Financing</li><li>Requirement gathering and analysis</li><li>Product configuration</li><li>Client implementation and UAT coordination</li><li>Business needs into functional solutions</li><li>Stakeholder management and enhancements</li></ul></div></div>
+<div class="row"><div class="d">Jan 2021 - Mar 2023<b>SCF QA</b></div><div><h3>SCF QA, IDFC FIRST Bank (Themepro)</h3><p class="o">QKTech, Navi Mumbai</p><ul><li>End-to-end SCF process validation</li><li>Buyer and supplier onboarding</li><li>Invoice upload, validation, buyer approval</li><li>Financing requests, credit check, limits</li><li>Disbursement, repayment, reporting, reconciliation</li><li>SIT, UAT and production validation</li><li>Support before and after go-live</li></ul></div></div>
+</div>
+<h2 style="margin-top:70px;font-size:clamp(1.6rem,3.4vw,2.3rem)">Systems I have worked on</h2>
+<div class="sys">
+<div class="node"><small>SCF platform</small><h3>VEEFIN</h3><p>Implementation, UAT and user story tracking for SCF products.</p></div><div class="pipe"></div>
+<div class="node"><small>Digital lending</small><h3>UNCIA / Themepro</h3><p>End-to-end LMS flow: onboarding, program setup, buyer and seller setup, disbursements, repayments.</p></div><div class="pipe"></div>
+<div class="node"><small>Core banking</small><h3>TCS BaNCS</h3><p>Hands-on exposure, including integration flows with SCF platforms.</p></div>
+</div>
+<div class="go"><b>7</b><p><strong>Customized SCF products taken live</strong> at IDFC FIRST Bank on VEEFIN: Vendor Finance, Dealer Finance, SID, PID, Factoring and Reverse Factoring. I contributed through UAT, end-to-end testing and coordination with developers, business, product and operations teams.</p></div>
+</div></section>
+
+<section id="s5" data-s><div class="w">
+<span class="stamp">REPAID</span><h2>Recognition</h2>
+<p class="lead">Receipts for work on Supply Chain Finance at IDFC FIRST Bank.</p>
+<div class="aw">
+<div class="rc"><div class="m">RECEIPT 01</div><h3>Customer Hero Award</h3><p>January 2024</p></div>
+<div class="rc"><div class="m">RECEIPT 02</div><h3>Team Super Squad Award</h3><p>March 2024</p></div>
+<div class="rc"><div class="m">RECEIPT 03</div><h3>Star Performer Award</h3><p>2025</p></div>
+</div>
+<div class="sk">
+<div class="card"><h3>Supply Chain Finance</h3><div class="chips"><span>Vendor Finance</span><span>Dealer Finance</span><span>Invoice Discounting</span><span>Factoring</span><span>Reverse Factoring</span><span>Receivables Financing</span></div></div>
+<div class="card"><h3>Product and business</h3><div class="chips"><span>Product Ownership</span><span>Business Analysis</span><span>Requirement Gathering</span><span>Product Configuration</span><span>Stakeholder Management</span><span>UAT Coordination</span></div></div>
+<div class="card"><h3>Banking and technology</h3><div class="chips"><span>Core Banking Integration</span><span>LMS</span><span>Digital Lending</span><span>Banking Operations</span><span>SCF Platforms</span></div></div>
+<div class="card"><h3>Tools and platforms</h3><div class="chips"><span>JIRA</span><span>Confluence</span><span>Excel</span><span>PowerPoint</span><span>Word</span><span>Postman API</span><span>Selenium WebDriver</span></div></div>
+</div>
+<div class="cert"><div>Agile Crash Course<small>2024</small></div><div>Basic Selenium with Java<small>2024</small></div><div>Java Certification Course<small>2023</small></div><div>Manual Testing<small>2023</small></div><div>Basic Excel Formulas and Functions</div><div>Python for Beginners</div></div>
+</div></section>
+
+<section id="s6" class="fin" data-s><div class="w">
+<span class="stamp">RECONCILED</span><h2>Books balanced. Let's connect.</h2>
+<p class="lead">If you lead banking, product or FinTech teams, hire for Supply Chain Finance roles, or want to collaborate on digital lending, I would be glad to hear from you.</p>
+<div class="bal"><span>Your goals</span><b>=</b><span>My SCF product experience</span></div>
+<a class="btn p" href="mailto:nutangadge11@gmail.com">nutangadge11@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/nutangadge/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>
+</div></section>
+</main>
+<footer>&copy; <span id="yr">2026</span> Nutan Gadge. Product Owner, Supply Chain Finance.</footer>
+
+<script>
+(function(){
+var P=[["Vendor Finance","Early payment for a buyer's vendors, based on invoices the buyer has approved.",["Anchor","Buyer","Requests","Vendor","Repays","Buyer on due date"]],
+["Dealer Finance","Financing for dealers in a manufacturer's network to fund their purchases.",["Anchor","Manufacturer","Requests","Dealer","Repays","Dealer on due date"]],
+["Invoice Discounting","Suppliers receive funds against approved invoices before the due date.",["Anchor","Buyer","Requests","Supplier","Repays","Per program terms"]],
+["Factoring","Receivables are financed, with funds advanced against what customers owe.",["Anchor","Buyer","Requests","Supplier","Repays","Per program terms"]],
+["Reverse Factoring","Buyer-led program where suppliers are paid early on approved invoices.",["Anchor","Buyer","Requests","Supplier","Repays","Buyer on due date"]]];
+var $=function(i){return document.getElementById(i)},tabs=$('tabs'),cp=0;
+P.forEach(function(p,i){var b=document.createElement('button');b.textContent=p[0];b.setAttribute('role','tab');b.onclick=function(){cp=i;sel()};tabs.appendChild(b)});
+function sel(){tabs.querySelectorAll('button').forEach(function(b,i){b.setAttribute('aria-selected',i===cp)});var p=P[cp],w=p[2];
+$('pt').textContent=p[0];$('pd').textContent=p[1];
+$('who').innerHTML='<div><b>Led by</b>'+w[1]+'</div><div><b>Financed party</b>'+w[3]+'</div><div><b>Repayment</b>'+w[5]+'</div><div><b>Platform flow</b>SCF platform to Core Banking</div>'}
+function L(n){return '\u20B9'+(n>=100?(n/100).toFixed(2)+' Cr':n.toFixed(2)+' L')}
+function calc(){var a=+$('a').value,t=+$('t').value,r=+$('r').value,l=+$('l').value,d=a*r/100*t/365;
+$('av').textContent=L(a);$('tv').textContent=t+' days';$('rv').textContent=r.toFixed(2)+'%';$('lv').textContent=L(l);
+$('o1').textContent=L(d);$('o2').textContent=L(a-d);$('o3').textContent=L(a);
+var v=$('vd'),ok=a<=l;v.className='verdict'+(ok?'':' no');
+v.textContent=ok?'Credit check passed. Invoice is within the program limit, so financing is approved for disbursement.':'Limit validation failed. Invoice exceeds the program limit, so the request is rejected.'}
+['a','t','r','l'].forEach(function(i){$(i).addEventListener('input',calc)});sel();calc();
+var S=document.querySelectorAll('[data-s]'),A=document.querySelectorAll('.steps a'),N=['Uploaded','Approved','Financed','Disbursed','Repaid','Reconciled'];
+function mark(n){A.forEach(function(a,i){a.classList.toggle('d',i<=n)});$('bar').style.width=(n/5*(100))+'%';$('bar').style.maxWidth='calc(100% - 16px)';$('stat').textContent=N[n]}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');mark([].indexOf.call(S,x.target))}})},{rootMargin:'-40% 0px -55% 0px'});S.forEach(function(s){io.observe(s)})}else{S.forEach(function(s){s.classList.add('in')})}
+mark(0);$('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
